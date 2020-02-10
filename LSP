@@ -1,0 +1,44 @@
+using System;
+
+namespace Quete_LSP
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+
+    public class Polygon
+    {
+        public double _width { get; set; }
+        public double _height { get; set; }
+        public double _Area { get => _height * _width; }
+
+    }
+
+    class Rectangle : Polygon
+    {
+
+    }
+
+    class Square : Polygon
+    {
+        public void SetWidth(double width)
+        {
+            // Because a square must have its sides equal, I also set
+            // its height to the given width
+            _width = width;
+            _height = width;
+        }
+
+        public void SetHeight(double height)
+        {
+            // Because a square must have its sides equal, I also set
+            // its width to the given height
+            _height = height;
+            _width = height;
+        }
+    }
+}
