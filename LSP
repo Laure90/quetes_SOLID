@@ -10,17 +10,20 @@ namespace Quete_LSP
         }
     }
 
-    public class Polygon
+    public abstract class Polygon
     {
         public double _width { get; set; }
         public double _height { get; set; }
-        public double _Area { get => _height * _width; }
+        public abstract double Area();
 
     }
 
     class Rectangle : Polygon
     {
-
+        public override double Area()
+        {
+            return _height * _width;
+        }
     }
 
     class Square : Polygon
@@ -39,6 +42,11 @@ namespace Quete_LSP
             // its width to the given height
             _height = height;
             _width = height;
+        }
+
+        public override double Area()
+        {
+            return _height * _width;
         }
     }
 }
